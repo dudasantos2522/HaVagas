@@ -129,7 +129,6 @@
             android:inputType="phone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/celularTv" />
-        />
     </LinearLayout>
 
     <TextView
@@ -148,7 +147,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sexoTv">
-
         <RadioButton
             android:id="@+id/masculinoRb"
             android:layout_width="0dp"
@@ -290,22 +288,22 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/vagaInteresseTv"
+        android:id="@+id/vagasInteresseTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/vaga_interesse"
+        android:text="@string/vagas_interesse"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mestradoDoutoradoLl" />
 
     <EditText
-        android:id="@+id/vagaInteresseEt"
+        android:id="@+id/vagasInteresseEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vagaInteresseTv" />
+        app:layout_constraintTop_toBottomOf="@id/vagasInteresseTv" />
 
     <RadioGroup
         android:id="@+id/botaoRg"
@@ -313,7 +311,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vagaInteresseEt">
+        app:layout_constraintTop_toBottomOf="@id/vagasInteresseEt">
         <Button
             android:id="@+id/salvarBt"
             android:layout_width="0dp"
