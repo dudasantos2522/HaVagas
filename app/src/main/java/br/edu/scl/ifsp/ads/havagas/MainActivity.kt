@@ -103,4 +103,48 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onSaveInstanceState( outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        with(amb) {
+            outState.putString("nomeCompletoEt", nomeCompletoEt.text.toString())
+            outState.putString("emailEt", emailEt.text.toString())
+            outState.putBoolean("ingressarListaEmailCb", ingressarListaEmailCb.isChecked)
+            outState.putString("telefoneEt", telefoneEt.text.toString())
+            outState.putBoolean("tipoTelefone", comercialRb.isChecked)
+            outState.putBoolean("adicionarCelularCb", adicionarCelularCb.isChecked)
+            outState.putInt("celularLl", celularLl.visibility)
+            outState.putString("celularEt", celularEt.text.toString())
+            outState.putBoolean("sexo", masculinoRb.isChecked)
+            outState.putString("dataNascimentoEt", dataNascimentoEt.text.toString())
+            outState.putInt("formacaoSp", formacaoSp.selectedItemPosition)
+            outState.putString("anoConclusaoEt", anoConclusaoEt.text.toString())
+            outState.putString("instituicaoEt", instituicaoEt.text.toString())
+            outState.putString("tituloMonografiaEt", tituloMonografiaEt.text.toString())
+            outState.putString("orientadorEt", orientadorEt.text.toString())
+            outState.putString("vagasInteresseEt", vagasInteresseEt.text.toString())
+        }
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        with(amb) {
+            nomeCompletoEt.setText(savedInstanceState.getString("nomeCompletoEt"))
+            emailEt.setText(savedInstanceState.getString("emailEt"))
+            ingressarListaEmailCb.isChecked = savedInstanceState.getBoolean(("ingressarListaEmailCb"))
+            telefoneEt.setText(savedInstanceState.getString("telefoneEt"))
+            if (savedInstanceState.getBoolean("tipoTelefone")) comercialRb.isChecked else residencialRb.isChecked
+            adicionarCelularCb.isChecked = savedInstanceState.getBoolean("adicionarCelularCb")
+            celularLl.visibility = savedInstanceState.getInt("celularLl")
+            celularEt.setText(savedInstanceState.getString("celularEt"))
+            if (savedInstanceState.getBoolean("sexo")) masculinoRb.isChecked else femininoRb.isChecked
+            dataNascimentoEt.setText(savedInstanceState.getString("dataNascimentoEt"))
+            formacaoSp.setSelection(savedInstanceState.getInt("formacaoSp"))
+            anoConclusaoEt.setText(savedInstanceState.getString("anoConclusaoEt"))
+            instituicaoEt.setText(savedInstanceState.getString("instituicaoEt"))
+            tituloMonografiaEt.setText(savedInstanceState.getString("tituloMonografiaEt"))
+            orientadorEt.setText(savedInstanceState.getString("orientadorEt"))
+            vagasInteresseEt.setText(savedInstanceState.getString("vagasInteresseEt"))
+        }
+    }
 }
